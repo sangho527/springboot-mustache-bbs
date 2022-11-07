@@ -1,0 +1,16 @@
+{{>layouts/header}}
+
+<!--<form 으로 시작합니다.
+action: http request가 어디로 갈지
+method: post 없으면 기본값은 get
+input name=”title”: title이라고 서버에서 받아주어야 합니다.
+input name=”content”: content이라고 서버에서 받아주어야 합니다.
+type=submit —> 이 속성이 들어있는 버튼 등을 누르면 데이터(title, content)를 전송합니다.
+-->
+<form action="/articles/posts" method="post">
+    <input type="text" name="title">
+    <input type="text" name="content">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles">back</a>
+</form>
+{{>layouts/footer}}
