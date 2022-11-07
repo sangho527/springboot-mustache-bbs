@@ -1,4 +1,4 @@
-package com.mustache.bbs;
+package com.mustache.bbs.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,7 @@ public class MustacheController {
     @GetMapping(value = "/hi")
     public String mustacheCon(Model model){
         model.addAttribute("username", "ho"); // view에 값을 넘김
-        return "greetings"; // greetings 라는 이름의 view를 리턴
+        return "layouts/greetings"; // greetings 라는 이름의 view를 리턴
     }
 
 
@@ -18,6 +18,6 @@ public class MustacheController {
     public String mustacheCon(@PathVariable String id, Model model) {
         model.addAttribute("username", "ho"); // view에 값을 넘김
         model.addAttribute("id", "id"); // view에 값을 넘김
-        return "greetings"; // greetings 라는 이름의 view를 리턴
+        return "layouts/greetings"; // greetings 라는 이름의 view를 리턴
     }
 }
