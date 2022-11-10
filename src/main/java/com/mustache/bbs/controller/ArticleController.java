@@ -35,7 +35,7 @@ public class ArticleController {
 
     @GetMapping("/new")
     public String createPage() {
-        return "new";
+        return "articles/new";
     }
 
     @GetMapping("/{id}")
@@ -45,9 +45,9 @@ public class ArticleController {
         if (!optArticle.isEmpty()) {
             // Optional.get() ---> Article
             model.addAttribute("article", optArticle.get());
-            return "show";
+            return "articles/show";
         } else {
-            return "error";
+            return "articles/error";
         }
     }
 
@@ -58,12 +58,12 @@ public class ArticleController {
         return "";
     }
 
-    @PostMapping("")
-    public String add(ArticleDto articleDto){
-        log.info(articleDto.getTitle());
-        Article savedArticle = articleRepository.save(articleDto.toEntity());
-        log.info("generatedId:{}", savedArticle.getId());
-        return "";
-
-    }
+//    @PostMapping("")
+//    public String add(ArticleDto articleDto){
+//        log.info(articleDto.getTitle());
+//        Article savedArticle = articleRepository.save(articleDto.toEntity());
+//        log.info("generatedId:{}", savedArticle.getId());
+//        return "";
+//
+//    }
 }
