@@ -1,16 +1,22 @@
 {{>layouts/header}}
 
-<!--<form 으로 시작합니다.
-action: http request가 어디로 갈지
-method: post 없으면 기본값은 get
-input name=”title”: title이라고 서버에서 받아주어야 합니다.
-input name=”content”: content이라고 서버에서 받아주어야 합니다.
-type=submit —> 이 속성이 들어있는 버튼 등을 누르면 데이터(title, content)를 전송합니다.
--->
-<form action="/articles/posts" method="post">
-    <input type="text" name="title">
-    <input type="text" name="content">
+<form class= "container" action="/articles/posts" method="post">
+    <div class="mb-3">
+        <label class="form-label">title</label><br>
+        <input type="text" name="title" placeholder="제목을 입력하세요." autofocus="autofocus"><br>
+    </div>
+
+    <div class ="mb-3">
+        <label class="form-label">content</label>
+        <textarea class="form-control" rows="3" name="content" placeholder="내용을 입력하세요." ></textarea>
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
     <a href="/articles">back</a>
 </form>
+<br>
+<div style= "text-align: center" >
+    <button type="button" class="btn btn-success"><a href="/articles/new" style= "color: white">new article</a></button>
+    <button type="button" class="btn btn-warning"><a href="/articles" style= "color: white" >articles List</a></button>
+</div>
 {{>layouts/footer}}
