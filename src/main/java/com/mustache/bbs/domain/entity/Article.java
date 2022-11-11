@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // ID를 직접 생성하지 않고 자동으로 생성하도록 한 경우에 붙임
-    //private Long id;
+    private Long id;
     private String title;
     private String contents;
 

@@ -9,7 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class ArticleDto {
-    //private Long id;
+    private Long id;
     private String title;
     private String content;
 
@@ -21,5 +21,5 @@ public class ArticleDto {
 
     public Article toEntity() {
         return new Article(title, content);
-    }
+    } // article을 entity로 변환
 }
